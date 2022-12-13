@@ -44,6 +44,7 @@ const HeaderBar = () => {
                     width="30px"
                     height="30px"
                     position="-10px -110px"
+                    aria-label="menu button"
                   />
                 }
               />
