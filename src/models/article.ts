@@ -18,8 +18,8 @@ export interface ArticleTag {
 }
 
 export interface findArticlesRequest {
-  userId: string | string[] | undefined; //TODO type
-  tag: string | string[] | undefined;
+  userId: string | string[] | undefined; //TODO type 스트링 타입으로 지정해야함
+  tag: string | string[] | undefined; // 스트링 타임으로 지정해야함
   pageNum: number;
 }
 

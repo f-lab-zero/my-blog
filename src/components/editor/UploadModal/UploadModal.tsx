@@ -21,7 +21,7 @@ const UploadModal: React.FC<Props> = ({ isActive, handleClose }) => {
   const router = useRouter();
   const { data: session } = useSession();
   const postArticleMutation = usePostArticle();
-  dayjs.locale("ko");
+  dayjs.locale("ko");// 전역 설정이라서 _app 파일에 두는게 맞아요
 
   const handleFileUpload = async () => {
     if (!title) {

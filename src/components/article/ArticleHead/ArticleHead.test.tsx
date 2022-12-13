@@ -17,11 +17,11 @@ const mockUseSession = (data: { email: string }) => {
       },
     };
   });
-};
+}; // describe 안으로
 
 describe("ArticleHead", () => {
   const mockAlert = jest.fn();
-  global.alert = mockAlert;
+  global.alert = mockAlert; // jest setup에
 
   const renderArticleHead = ({
     title,
@@ -48,7 +48,7 @@ describe("ArticleHead", () => {
       { router: router },
     );
 
-  const props = {
+  const props = { // 테스트할 때 사용하는 객체나 api response 같은 것들은 fixtures 안에 두어 재사용하자.
     title: "타이틀",
     tags: ["tag1", "tag2"],
     thumbnailUrl:

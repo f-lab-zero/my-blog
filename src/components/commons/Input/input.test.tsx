@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { theme } from "src/styles/globalStyle";
-import Input, { InputStyled } from "./Input";
+import Input, { Props } from "./Input";
 import { ThemeWrapper } from "src/test-utils";
 
 describe("Input", () => {
@@ -10,7 +10,7 @@ describe("Input", () => {
     variant,
     rounded,
     fontSize,
-  }: InputStyled) =>
+  }: Props) =>
     render(
       <Input
         variant={variant}
@@ -94,9 +94,9 @@ describe("Input", () => {
       it(`variant, rounded, fontSize를 테스트한다.`, () => {
         renderInput({
           placeholder: placeholder,
-          variant: style.variant as InputStyled["variant"],
-          rounded: style.rounded as InputStyled["rounded"],
-          fontSize: style.fontSize as InputStyled["fontSize"],
+          variant: style.variant as Props["variant"],
+          rounded: style.rounded as Props["rounded"],
+          fontSize: style.fontSize as Props["fontSize"],
         });
 
         const input = screen.getByPlaceholderText(placeholder);

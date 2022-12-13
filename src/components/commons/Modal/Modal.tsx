@@ -6,6 +6,7 @@ export interface Props {
   children: ReactNode;
   isActive: boolean;
 }
+
 const Modal = (props: Props) => {
   if (typeof document == "undefined") return null;
 

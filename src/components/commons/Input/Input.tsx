@@ -2,20 +2,20 @@ import React, { useRef } from "react";
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 
-export interface InputStyled
+export interface Props
   extends React.InputHTMLAttributes<HTMLInputElement> {
   variant: "default" | "primary" | "secondary" | "tertiary";
   rounded: "default" | "round";
   fontSize: "mini" | "small" | "medium" | "large";
 }
 
-const Input = (props: InputStyled) => {
+const Input = (props: Props) => {
   const inputRef = useRef<HTMLInputElement>(null);
   return <InputStyled {...props} ref={inputRef} />;
 };
 export default Input;
 
-const InputStyled = styled.input<InputStyled>`
+const InputStyled = styled.input<Props>`
   width: 100%;
   border: none;
   outline: none;

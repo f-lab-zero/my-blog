@@ -16,19 +16,19 @@ const ArticlePage = () => {
   const {
     query: { userId, tag = "all" },
   } = useRouter();
+
   const {
     data: { articles, total },
     refetch,
-  } = useArticles({ userId, tag, pageNum });
+  } = useArticles(userId, tag);
+  // 객체로 넘기면 계속 리랜더링되고 함수 만들어요 useMemo 쓰던가 아니면 객체로 넘기지마세요
   const { data: tags } = useTag(userId as string);
 
-  const handleNextPage = () => {
-    refetch();
-  };
-
   useEffect(() => {
-    setPageNum(2);
-  }, []);
+    refetch(pageNum);
+  }, [pageNum]);
+
+  // 리팩터링 2판, 클린코드 보면 다 나옴
   return (
     <Container>
       <ArticleTagList tags={tags} />
@@ -37,12 +37,14 @@ const ArticlePage = () => {
         <PaginationButton
           total={total}
           dataLength={articles.length || 0}
-          event={handleNextPage}
           button={
             <Button
               size="medium"
               variant="primary"
-              onClick={() => setPageNum((page) => page + 1)}
+              onClick={() => {//비즈니스 로직이 jsx에 있으면 화장성과 가독성이 떨어져요. 지금은 하나만 들어가있어도 향후에는 두개이상으로 늘어날 수 있기 때문이에요
+                refetch();
+                setPageNum((page) => page + 1);
+              }}
             >
               목록 더 보기
             </Button>

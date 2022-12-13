@@ -3,8 +3,11 @@ import { ThemeProvider } from "@emotion/react";
 import { NextRouter } from "next/router";
 import { RouterContext } from "next/dist/shared/lib/router-context";
 import { createMockRouter } from "__mocks__/createMockRouter";
-import ArticleTagList, { Props } from "./ArticleTagList";
+import ArticleTagList from "./ArticleTagList";
 import { render } from "src/test-utils/customRender";
+import { ComponentProps } from "react";
+
+type Props = ComponentProps<typeof ArticleTagList>;
 
 describe("ArticleTagList", () => {
   const renderArticleTagList = ({

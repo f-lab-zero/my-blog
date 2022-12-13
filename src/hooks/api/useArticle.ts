@@ -14,7 +14,8 @@ export const useArticles = ({ userId, tag, pageNum }: findArticlesRequest) => {
     {
       keepPreviousData: true,
       refetchOnMount: true,
-      refetchOnWindowFocus: false,
+      refetchOnWindowFocus: false, //요런건 QueryClient default options에 추가하면 좋아요
+      // retry: false //요런건 QueryClient default options에 추가하면 좋아요
     },
   );
 };

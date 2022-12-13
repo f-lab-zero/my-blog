@@ -1,9 +1,9 @@
-import { Article as ArticleProps } from "src/models";
+import { Article as TArticle } from "src/models";
 import { ArticleBox } from "src/components/article";
 import styled from "@emotion/styled";
 
 interface Props {
-  articles: Array<ArticleProps>;
+  articles: TArticle[];
 }
 
 const ArticleList: React.FC<Props> = ({ articles }: Props) => {

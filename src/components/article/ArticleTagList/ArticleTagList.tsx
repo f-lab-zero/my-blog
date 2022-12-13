@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { useRouter } from "next/router";
 import { TagList } from "src/components/commons";
 
-export interface Props {
+interface Props { // interface export 할 필요는 없는듯?
   tags: string[];
 }
 

@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { Anton } from "@next/font/google";
 import { Button } from "src/components/commons";
 import { SubTitle } from "src/components/home";
-
+// 페이지 컴포넌트는 진짜 페이지에서 해야하는 일들만 담당하는게 좋을 것 같아요. header, meta, title등. needAuth 같은것들
 const WELCOME = "블로그에서 나만의 스토리를 공유해 보세요.";
 
 const antonFont = Anton({ weight: "400", subsets: ["latin"] });

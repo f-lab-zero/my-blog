@@ -18,6 +18,8 @@ export const useTyping = ({ content = "", speed = 100 }: Props) => {
         return index + 1;
       });
     }, speed);
+
+    return () => clearInterval(key);
   }, [index]);
 
   return text;
